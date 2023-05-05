@@ -1,0 +1,4 @@
+FastAPI
+jupyter
+numpy
+pandas
