@@ -1,4 +1,4 @@
-fastapi
+Flask>=2.2.2
 jupyter
 numpy
 pandas
@@ -6,3 +6,4 @@ joblib
 pydantic
 typing
 uvicorn
+
