@@ -3,11 +3,12 @@ from typing import List
 import joblib
 from pydantic import BaseModel
 import json
+from bson import ObjectId
 
 app = FastAPI()
 
 class RecommendationRequest(BaseModel):
-    user_id: str
+    user_id: ObjectId
     post_title: str
 
 @app.get("/recommendations/")
