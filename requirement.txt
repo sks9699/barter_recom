@@ -7,4 +7,5 @@ pydantic
 typing
 uvicorn
 pymongo
-sklearn
+scikit-learn
+
