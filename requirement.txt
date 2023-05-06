@@ -1,4 +1,7 @@
-FastAPI
+fastapi
 jupyter
 numpy
 pandas
+joblib
+pydantic
+typing
