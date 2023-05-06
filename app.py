@@ -7,7 +7,7 @@ import json
 app = FastAPI()
 
 class RecommendationRequest(BaseModel):
-    user_id: int
+    user_id: str
     post_title: str
 
 @app.get("/recommendations/")
@@ -18,10 +18,10 @@ async def get_recommendations(recommendation_request: RecommendationRequest):
     post_title = recommendation_request.post_title
 
     # Use the recommendation model to get recommendations for this user and post
-    recommended_posts = model.get_recommendations(post_title)
+    recommended_posts = model.get_recommendations(user_id, post_title)
 
     # Return the recommended posts, along with the number of recommendations
     return {
         "recommended_posts": recommended_posts,
-        "num_recommendations": len(recommended_posts)
+        "num_recommendations": 9
     }
