@@ -1,6 +1,8 @@
 FROM python:3.9
 
-COPY requirement.txt /app
+WORKDIR /app
+
+COPY requirement.txt 
 RUN pip install --no-cache-dir -r requirement.txt
 
 COPY . /app
