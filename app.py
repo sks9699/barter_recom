@@ -10,7 +10,7 @@ app = FastAPI()
 
 
 class Post(BaseModel):
-    title: str
+    id: str
 
 
 # Load the recommendation model
