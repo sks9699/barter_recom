@@ -3,11 +3,22 @@ from pydantic import BaseModel
 import pickle
 import pymongo
 import json
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 from bson import ObjectId
 
 
 app = FastAPI()
 
+# Add CORS middleware
+origins = ['*']
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Post(BaseModel):
     id: str
@@ -65,4 +76,5 @@ async def recommendations(request_data: Post):
     # Generate recommendations based on the post title
     recommendations = get_recommendations(post_id, data, cosine_sim)
 
-    return {'recommendations': recommendations}
+   # Return a JSON response
+    return JSONResponse(content={'recommendations': recommendations})
