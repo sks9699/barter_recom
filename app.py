@@ -59,7 +59,7 @@ async def recommendations(request_data: Post):
     input_data =request_data.json()
     input_dict = json.loads(input_data)
 
-    post_id = str(input_dict['title'])
+    post_id = str(input_dict['id'])
 
     
     # Generate recommendations based on the post title
