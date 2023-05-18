@@ -1,1 +1,2 @@
 # barter_recom
+Barter is dsign content sharing platform that I and my team develop for a college project. My role in this to collection data from MOngodb altas database and clean the data using NLTK toolkit(removing puncuation, stopwords, emojis, and tokenize the data) then build a recommendation system. After developing a recomendation system, I develop a FastAPI(Restful api) and deploy that on render cloud hosting sevrvice with the help of docker.
